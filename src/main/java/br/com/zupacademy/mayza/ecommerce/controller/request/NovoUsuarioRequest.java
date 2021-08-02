@@ -2,6 +2,7 @@ package br.com.zupacademy.mayza.ecommerce.controller.request;
 
 import br.com.zupacademy.mayza.ecommerce.modelo.SenhaLimpa;
 import br.com.zupacademy.mayza.ecommerce.modelo.Usuario;
+import br.com.zupacademy.mayza.ecommerce.validator.UniqueValid;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
@@ -11,6 +12,7 @@ public class NovoUsuarioRequest {
 
     @NotBlank
     @Email
+    @UniqueValid(domainClass = Usuario.class, fieldName = "login", message = "Já existe um cadastro com o login informado")
     private String login;
 
     @NotBlank
