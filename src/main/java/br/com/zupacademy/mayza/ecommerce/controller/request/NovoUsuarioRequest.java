@@ -12,7 +12,7 @@ public class NovoUsuarioRequest {
 
     @NotBlank
     @Email
-    @UniqueValid(domainClass = Usuario.class, fieldName = "login", message = "Já existe um cadastro com o login informado")
+    @UniqueValid(domainClass = Usuario.class, fieldName = "login", message = "Já existe um cadastro com o email informado")
     private String login;
 
     @NotBlank
