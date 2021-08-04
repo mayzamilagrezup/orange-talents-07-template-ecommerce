@@ -1,10 +1,11 @@
 package br.com.zupacademy.mayza.ecommerce.controller.request;
 
+import br.com.zupacademy.mayza.ecommerce.config.seguranca.UsuarioLogado;
 import br.com.zupacademy.mayza.ecommerce.modelo.Categoria;
 import br.com.zupacademy.mayza.ecommerce.modelo.Produto;
-import br.com.zupacademy.mayza.ecommerce.modelo.Usuario;
 import br.com.zupacademy.mayza.ecommerce.repository.CategoriaRepository;
 import br.com.zupacademy.mayza.ecommerce.validator.IdValid;
+import br.com.zupacademy.mayza.ecommerce.validator.UniqueValid;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.UniqueElements;
 
@@ -20,6 +21,7 @@ import java.util.List;
 public class NovoProdutoRequest {
 
     @NotBlank
+    @UniqueValid(domainClass = Produto.class, fieldName = "nome", message = "Já existe um produto cadastrado com o nome informado")
     private String nome;
 
     @NotNull
@@ -52,9 +54,9 @@ public class NovoProdutoRequest {
         this.caracteristicas.addAll(caracteristicas);
     }
 
-    public Produto toProduto(CategoriaRepository categoriaRepository, Usuario usuario) {
+    public Produto toProduto(CategoriaRepository categoriaRepository, UsuarioLogado usuarioLogado) {
         Categoria categoria = categoriaRepository.getById(idCategoria);
-        return new Produto(nome, valor, quantidade, descricao, categoria, caracteristicas, usuario);
+        return new Produto(nome, valor, quantidade, descricao, categoria, caracteristicas, usuarioLogado.get());
     }
 
 }
