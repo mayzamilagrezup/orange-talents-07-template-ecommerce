@@ -6,7 +6,6 @@ import br.com.zupacademy.mayza.ecommerce.validator.IdValid;
 import br.com.zupacademy.mayza.ecommerce.validator.UniqueValid;
 
 import javax.validation.constraints.NotBlank;
-import java.util.Optional;
 
 public class NovaCategoriaRequest {
 
@@ -26,8 +25,8 @@ public class NovaCategoriaRequest {
        Categoria categoria = new Categoria(nome);
 
         if(idCategoriaMae != null) {
-            Optional<Categoria> categoriaMae = categoriaRepository.findById(idCategoriaMae);
-            categoria.setCategoriaMae(categoriaMae.get());
+            Categoria categoriaMae = categoriaRepository.getById(idCategoriaMae);
+            categoria.setCategoriaMae(categoriaMae);
         }
         return categoria;
     }
