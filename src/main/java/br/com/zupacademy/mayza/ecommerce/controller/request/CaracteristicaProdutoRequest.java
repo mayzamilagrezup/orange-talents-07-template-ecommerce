@@ -1,7 +1,7 @@
 package br.com.zupacademy.mayza.ecommerce.controller.request;
 
-import br.com.zupacademy.mayza.ecommerce.modelo.CaracteristicaProduto;
-import br.com.zupacademy.mayza.ecommerce.modelo.Produto;
+import br.com.zupacademy.mayza.ecommerce.modelo.produto.CaracteristicaProduto;
+import br.com.zupacademy.mayza.ecommerce.modelo.produto.Produto;
 import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 

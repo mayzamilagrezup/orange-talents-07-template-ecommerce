@@ -1,6 +1,6 @@
 package br.com.zupacademy.mayza.ecommerce.config.seguranca;
 
-import br.com.zupacademy.mayza.ecommerce.modelo.Usuario;
+import br.com.zupacademy.mayza.ecommerce.modelo.usuario.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

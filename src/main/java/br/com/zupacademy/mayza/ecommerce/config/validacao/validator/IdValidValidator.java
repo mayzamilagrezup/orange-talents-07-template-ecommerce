@@ -1,4 +1,6 @@
-package br.com.zupacademy.mayza.ecommerce.validator;
+package br.com.zupacademy.mayza.ecommerce.config.validacao.validator;
+
+import br.com.zupacademy.mayza.ecommerce.config.validacao.validator.IdValid;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

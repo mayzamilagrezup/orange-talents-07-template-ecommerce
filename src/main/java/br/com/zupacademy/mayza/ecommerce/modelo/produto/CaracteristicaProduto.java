@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.modelo;
+package br.com.zupacademy.mayza.ecommerce.modelo.produto;
 
 import javax.persistence.*;
 

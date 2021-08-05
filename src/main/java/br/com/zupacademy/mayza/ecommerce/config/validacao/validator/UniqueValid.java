@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.validator;
+package br.com.zupacademy.mayza.ecommerce.config.validacao.validator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
