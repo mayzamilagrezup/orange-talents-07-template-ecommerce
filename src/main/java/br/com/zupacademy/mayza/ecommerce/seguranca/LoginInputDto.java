@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.config.seguranca;
+package br.com.zupacademy.mayza.ecommerce.seguranca;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 

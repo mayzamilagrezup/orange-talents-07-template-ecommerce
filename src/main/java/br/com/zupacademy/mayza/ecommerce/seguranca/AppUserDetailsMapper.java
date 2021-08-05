@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.config.seguranca;
+package br.com.zupacademy.mayza.ecommerce.seguranca;
 
 import br.com.zupacademy.mayza.ecommerce.modelo.usuario.Usuario;
 import org.springframework.context.annotation.Configuration;

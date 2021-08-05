@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.config.seguranca;
+package br.com.zupacademy.mayza.ecommerce.seguranca;
 
 import java.io.IOException;
 import java.util.Optional;

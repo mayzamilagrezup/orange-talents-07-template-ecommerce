@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.config.seguranca;
+package br.com.zupacademy.mayza.ecommerce.seguranca;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

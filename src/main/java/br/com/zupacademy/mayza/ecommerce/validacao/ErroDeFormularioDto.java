@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.config.validacao;
+package br.com.zupacademy.mayza.ecommerce.validacao;
 
 public class ErroDeFormularioDto {
 

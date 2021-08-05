@@ -1,7 +1,7 @@
 package br.com.zupacademy.mayza.ecommerce.controller;
 
-import br.com.zupacademy.mayza.ecommerce.config.seguranca.LoginInputDto;
-import br.com.zupacademy.mayza.ecommerce.config.seguranca.TokenManager;
+import br.com.zupacademy.mayza.ecommerce.seguranca.LoginInputDto;
+import br.com.zupacademy.mayza.ecommerce.seguranca.TokenManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

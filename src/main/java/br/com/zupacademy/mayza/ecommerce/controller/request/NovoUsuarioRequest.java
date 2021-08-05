@@ -2,7 +2,7 @@ package br.com.zupacademy.mayza.ecommerce.controller.request;
 
 import br.com.zupacademy.mayza.ecommerce.modelo.usuario.SenhaLimpa;
 import br.com.zupacademy.mayza.ecommerce.modelo.usuario.Usuario;
-import br.com.zupacademy.mayza.ecommerce.config.validacao.validator.UniqueValid;
+import br.com.zupacademy.mayza.ecommerce.validacao.validator.UniqueValid;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
