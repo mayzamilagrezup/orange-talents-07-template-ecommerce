@@ -4,7 +4,7 @@ import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;
 import br.com.zupacademy.mayza.ecommerce.controller.request.NovaImagemRequest;
 import br.com.zupacademy.mayza.ecommerce.controller.request.NovoProdutoRequest;
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.Produto;
-import br.com.zupacademy.mayza.ecommerce.modelo.produto.UploaderFake;
+import br.com.zupacademy.mayza.ecommerce.modelo.produto.imagem.UploaderFake;
 import br.com.zupacademy.mayza.ecommerce.repository.CategoriaRepository;
 import br.com.zupacademy.mayza.ecommerce.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

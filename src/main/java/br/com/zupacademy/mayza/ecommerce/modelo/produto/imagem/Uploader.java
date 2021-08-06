@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.modelo.produto;
+package br.com.zupacademy.mayza.ecommerce.modelo.produto.imagem;
 
 import org.springframework.web.multipart.MultipartFile;
 

@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.validacao;
+package br.com.zupacademy.mayza.ecommerce.tratamentoErros;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

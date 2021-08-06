@@ -2,8 +2,8 @@ package br.com.zupacademy.mayza.ecommerce.controller.request;
 
 import br.com.zupacademy.mayza.ecommerce.modelo.Categoria;
 import br.com.zupacademy.mayza.ecommerce.repository.CategoriaRepository;
-import br.com.zupacademy.mayza.ecommerce.validacao.validator.IdValid;
-import br.com.zupacademy.mayza.ecommerce.validacao.validator.UniqueValid;
+import br.com.zupacademy.mayza.ecommerce.validacao.IdValid;
+import br.com.zupacademy.mayza.ecommerce.validacao.UniqueValid;
 
 import javax.validation.constraints.NotBlank;
 

@@ -1,6 +1,6 @@
 package br.com.zupacademy.mayza.ecommerce.controller.request;
 
-import br.com.zupacademy.mayza.ecommerce.modelo.Opiniao;
+import br.com.zupacademy.mayza.ecommerce.modelo.produto.Opiniao;
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.Produto;
 import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;
 import org.hibernate.validator.constraints.Length;

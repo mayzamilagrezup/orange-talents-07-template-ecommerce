@@ -4,8 +4,8 @@ import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;
 import br.com.zupacademy.mayza.ecommerce.modelo.Categoria;
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.Produto;
 import br.com.zupacademy.mayza.ecommerce.repository.CategoriaRepository;
-import br.com.zupacademy.mayza.ecommerce.validacao.validator.IdValid;
-import br.com.zupacademy.mayza.ecommerce.validacao.validator.UniqueValid;
+import br.com.zupacademy.mayza.ecommerce.validacao.IdValid;
+import br.com.zupacademy.mayza.ecommerce.validacao.UniqueValid;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.UniqueElements;
 

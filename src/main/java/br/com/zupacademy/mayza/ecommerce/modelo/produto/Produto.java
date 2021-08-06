@@ -1,5 +1,6 @@
 package br.com.zupacademy.mayza.ecommerce.modelo.produto;
 
+import br.com.zupacademy.mayza.ecommerce.modelo.produto.imagem.ImagemProduto;
 import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;
 import br.com.zupacademy.mayza.ecommerce.controller.request.CaracteristicaProdutoRequest;
 import br.com.zupacademy.mayza.ecommerce.modelo.Categoria;
@@ -72,5 +73,13 @@ public class Produto {
 
     public boolean verificaDonoProduto(UsuarioLogado usuarioLogado) {
         return this.usuario.getLogin().equals(usuarioLogado.getUsername());
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public String getNome() {
+        return nome;
     }
 }
