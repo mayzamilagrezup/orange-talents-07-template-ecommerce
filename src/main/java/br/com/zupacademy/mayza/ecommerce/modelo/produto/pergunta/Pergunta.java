@@ -5,6 +5,7 @@ import br.com.zupacademy.mayza.ecommerce.modelo.usuario.Usuario;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 public class Pergunta {
@@ -43,5 +44,22 @@ public class Pergunta {
 
     public Produto getProduto() {
         return produto;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pergunta pergunta = (Pergunta) o;
+        return Objects.equals(titulo, pergunta.titulo) && Objects.equals(usuarioInteressado, pergunta.usuarioInteressado) && Objects.equals(produto, pergunta.produto);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titulo, usuarioInteressado, produto);
+    }
+
+    public String getTitulo() {
+        return titulo;
     }
 }

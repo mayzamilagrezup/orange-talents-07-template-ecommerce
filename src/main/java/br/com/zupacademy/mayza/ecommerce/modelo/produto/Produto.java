@@ -1,6 +1,7 @@
 package br.com.zupacademy.mayza.ecommerce.modelo.produto;
 
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.imagem.ImagemProduto;
+import br.com.zupacademy.mayza.ecommerce.modelo.produto.pergunta.Pergunta;
 import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;
 import br.com.zupacademy.mayza.ecommerce.controller.request.CaracteristicaProdutoRequest;
 import br.com.zupacademy.mayza.ecommerce.modelo.Categoria;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Entity
@@ -38,14 +40,20 @@ public class Produto {
 
     private LocalDateTime instanteCadastro = LocalDateTime.now();
 
-    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Set<CaracteristicaProduto> caracteristicas = new HashSet<>();
 
     @ManyToOne
     private Usuario usuario;
 
-    @OneToMany(mappedBy = "produto", cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Set<ImagemProduto> imagens = new HashSet<>();
+
+    @OneToMany(mappedBy = "produto", fetch = FetchType.EAGER)
+    private Set<Pergunta> perguntas = new HashSet<>();
+
+    @OneToMany(mappedBy = "produto", fetch = FetchType.EAGER)
+    private Set<Opiniao> opinioes = new HashSet<>();
 
     public Produto(String nome, BigDecimal valor, Integer quantidade, String descricao, Categoria categoria, Collection<CaracteristicaProdutoRequest> caracteristicas, Usuario usuario) {
         this.nome = nome;
@@ -81,5 +89,37 @@ public class Produto {
 
     public String getNome() {
         return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public Set<Opiniao> getOpinioes() {
+        return opinioes;
+    }
+
+    public <T> Set<T> mapeiaCaracteristica(Function<CaracteristicaProduto, T> funcaoMapear) {
+        return this.caracteristicas.stream().map(funcaoMapear).collect(Collectors.toSet());
+    }
+
+    public <T> Set<T> mapeiaImagem(Function<ImagemProduto, T> funcaoMapear) {
+        return this.imagens.stream().map(funcaoMapear).collect(Collectors.toSet());
+    }
+
+    public <T> Set<T> mapeiaPerguntas(Function<Pergunta, T> funcaoMapear) {
+        return this.perguntas.stream().map(funcaoMapear).collect(Collectors.toSet());
+    }
+
+    public <T> Set<T> mapeiaOpinioes(Function<Opiniao, T> funcaoMapear) {
+        return this.opinioes.stream().map(funcaoMapear).collect(Collectors.toSet());
+    }
+
+    public Integer getQuantidadeOpiniao() {
+        return opinioes.size();
     }
 }

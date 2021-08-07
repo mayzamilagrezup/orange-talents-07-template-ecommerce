@@ -25,7 +25,7 @@ public class OpiniaoController {
     private ProdutoRepository produtoRepository;
 
     @PostMapping("/{id}/opiniao")
-    public ResponseEntity<?> adiciona(@PathVariable ("id") Long id, @RequestBody @Valid NovaOpiniaoRequest request,
+    public ResponseEntity<?> adiciona(@PathVariable Long id, @RequestBody @Valid NovaOpiniaoRequest request,
                                       @AuthenticationPrincipal UsuarioLogado usuarioLogado) {
 
         Optional<Produto> produto = produtoRepository.findById(id);

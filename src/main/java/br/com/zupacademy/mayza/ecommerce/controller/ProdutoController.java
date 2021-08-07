@@ -1,5 +1,6 @@
 package br.com.zupacademy.mayza.ecommerce.controller;
 
+import br.com.zupacademy.mayza.ecommerce.controller.response.DetalheProdutoResponse;
 import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;
 import br.com.zupacademy.mayza.ecommerce.controller.request.NovaImagemRequest;
 import br.com.zupacademy.mayza.ecommerce.controller.request.NovoProdutoRequest;
@@ -43,7 +44,7 @@ public class ProdutoController {
     }
 
     @PostMapping("/{id}/imagens")
-    public ResponseEntity<?> adicionaImagens(@PathVariable("id") Long id, @Valid NovaImagemRequest request, @AuthenticationPrincipal UsuarioLogado usuarioLogado) {
+    public ResponseEntity<?> adicionaImagens(@PathVariable Long id, @Valid NovaImagemRequest request, @AuthenticationPrincipal UsuarioLogado usuarioLogado) {
 
         Optional<Produto> produto = produtoRepository.findById(id);
         if (!produto.isPresent()) {
@@ -56,6 +57,16 @@ public class ProdutoController {
         produto.get().associaImagens(links);
         produtoRepository.save(produto.get());
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<DetalheProdutoResponse> detalhe(@PathVariable Long id) {
+
+        Optional<Produto> produto = produtoRepository.findById(id);
+        if (!produto.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(new DetalheProdutoResponse(produto.get()));
     }
 
 }

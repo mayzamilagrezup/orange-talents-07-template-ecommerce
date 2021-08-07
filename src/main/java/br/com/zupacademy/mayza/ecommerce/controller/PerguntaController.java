@@ -29,7 +29,7 @@ public class PerguntaController {
     private Emails email;
 
     @PostMapping("/{id}/perguntas")
-    public ResponseEntity<?> adiciona(@PathVariable ("id") Long id, @RequestBody @Valid NovaPerguntaRequest request,
+    public ResponseEntity<?> adiciona(@PathVariable Long id, @RequestBody @Valid NovaPerguntaRequest request,
                                       @AuthenticationPrincipal UsuarioLogado usuarioLogado) {
 
         Optional<Produto> produto = produtoRepository.findById(id);

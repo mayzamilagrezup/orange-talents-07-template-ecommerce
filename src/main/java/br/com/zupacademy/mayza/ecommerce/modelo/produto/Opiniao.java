@@ -36,4 +36,16 @@ public class Opiniao {
     @Deprecated
     public Opiniao() {
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Integer getNota() {
+        return nota;
+    }
 }
