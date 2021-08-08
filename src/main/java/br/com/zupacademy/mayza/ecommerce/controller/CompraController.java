@@ -7,6 +7,7 @@ import br.com.zupacademy.mayza.ecommerce.repository.CompraRepository;
 import br.com.zupacademy.mayza.ecommerce.repository.ProdutoRepository;
 import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,12 +32,12 @@ public class CompraController {
     private Emails emails;
 
     @PostMapping
-    public ResponseEntity<String> compraProduto(@RequestBody @Valid NovaCompraRequest request,
+    public ResponseEntity<Void> compraProduto(@RequestBody @Valid NovaCompraRequest request,
                                                @AuthenticationPrincipal UsuarioLogado usuarioLogado, UriComponentsBuilder uriComponentsBuilder) {
 
         Compra compra = compraRepository.save(request.toCompra(usuarioLogado, produtoRepository));
         emails.enviaEmailCompra(compra);
 
-        return ResponseEntity.ok(compra.urlRedirecionamento(uriComponentsBuilder));
+        return ResponseEntity.status(302).header(HttpHeaders.LOCATION, compra.urlRedirecionamento(uriComponentsBuilder)).build();
     }
 }

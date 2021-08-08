@@ -50,6 +50,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/usuarios").permitAll()
                 .antMatchers(HttpMethod.POST, "/categorias").permitAll()
                 .antMatchers(HttpMethod.GET, "/produtos/{id:[0-9]+}").permitAll()
+                .antMatchers(HttpMethod.POST, "//retorno-pagseguro/{id:[0-9]+}").permitAll()
                 .antMatchers("/auth/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
