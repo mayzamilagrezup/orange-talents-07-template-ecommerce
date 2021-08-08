@@ -1,6 +1,6 @@
 package br.com.zupacademy.mayza.ecommerce.controller.request;
 
-import br.com.zupacademy.mayza.ecommerce.modelo.produto.pergunta.Pergunta;
+import br.com.zupacademy.mayza.ecommerce.modelo.produto.Pergunta;
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.Produto;
 import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;
 

@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.modelo.produto.pergunta;
+package br.com.zupacademy.mayza.ecommerce.modelo.email;
 
 import org.springframework.stereotype.Component;
 

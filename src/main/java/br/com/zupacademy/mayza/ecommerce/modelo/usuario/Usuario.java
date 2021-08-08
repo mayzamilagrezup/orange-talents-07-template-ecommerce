@@ -52,4 +52,11 @@ public class Usuario {
     public int hashCode() {
         return Objects.hash(login);
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "login='" + login + '\'' +
+                '}';
+    }
 }

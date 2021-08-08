@@ -26,7 +26,7 @@ public class DetalheProdutoResponse {
         this.linkImagem = produto.mapeiaImagem(i -> i.getLink());
         this.perguntas = produto.mapeiaPerguntas(p -> p.getTitulo());
         this.opinioes = produto.mapeiaOpinioes(DetalheOpiniaoProdutoResponse::new);
-        this.mediaNotas = produto.getOpinioes().stream().mapToInt(Opiniao::getNota).average().orElse(0);
+        this.mediaNotas = produto.getOpinioes().stream().mapToDouble(Opiniao::getNota).average().orElse(0.0);
         this.quantidadeNotas = produto.getQuantidadeOpiniao();
     }
 

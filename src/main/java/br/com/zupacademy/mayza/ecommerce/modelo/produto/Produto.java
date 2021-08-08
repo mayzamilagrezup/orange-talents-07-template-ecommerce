@@ -1,7 +1,6 @@
 package br.com.zupacademy.mayza.ecommerce.modelo.produto;
 
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.imagem.ImagemProduto;
-import br.com.zupacademy.mayza.ecommerce.modelo.produto.pergunta.Pergunta;
 import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;
 import br.com.zupacademy.mayza.ecommerce.controller.request.CaracteristicaProdutoRequest;
 import br.com.zupacademy.mayza.ecommerce.modelo.Categoria;
@@ -121,5 +120,23 @@ public class Produto {
 
     public Integer getQuantidadeOpiniao() {
         return opinioes.size();
+    }
+
+    public boolean atualizaEstoque(Integer quantidade) {
+        if (quantidade <= this.quantidade) {
+            this.quantidade -= quantidade;
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", valor=" + valor +
+                ", quantidade=" + quantidade +
+                ", descricao='" + descricao + '\'' +
+                '}';
     }
 }

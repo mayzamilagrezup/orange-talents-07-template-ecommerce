@@ -1,6 +1,5 @@
-package br.com.zupacademy.mayza.ecommerce.modelo.produto.pergunta;
+package br.com.zupacademy.mayza.ecommerce.modelo.produto;
 
-import br.com.zupacademy.mayza.ecommerce.modelo.produto.Produto;
 import br.com.zupacademy.mayza.ecommerce.modelo.usuario.Usuario;
 
 import javax.persistence.*;
