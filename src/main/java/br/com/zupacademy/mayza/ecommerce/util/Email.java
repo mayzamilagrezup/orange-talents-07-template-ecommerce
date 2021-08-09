@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.modelo.email;
+package br.com.zupacademy.mayza.ecommerce.util;
 
 public interface Email {
 

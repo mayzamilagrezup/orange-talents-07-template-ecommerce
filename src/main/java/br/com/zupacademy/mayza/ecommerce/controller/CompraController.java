@@ -2,7 +2,7 @@ package br.com.zupacademy.mayza.ecommerce.controller;
 
 import br.com.zupacademy.mayza.ecommerce.controller.request.NovaCompraRequest;
 import br.com.zupacademy.mayza.ecommerce.modelo.compra.Compra;
-import br.com.zupacademy.mayza.ecommerce.modelo.email.Emails;
+import br.com.zupacademy.mayza.ecommerce.util.Emails;
 import br.com.zupacademy.mayza.ecommerce.repository.CompraRepository;
 import br.com.zupacademy.mayza.ecommerce.repository.ProdutoRepository;
 import br.com.zupacademy.mayza.ecommerce.seguranca.UsuarioLogado;

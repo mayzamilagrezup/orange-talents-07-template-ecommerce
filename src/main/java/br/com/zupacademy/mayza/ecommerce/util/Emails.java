@@ -1,4 +1,4 @@
-package br.com.zupacademy.mayza.ecommerce.modelo.email;
+package br.com.zupacademy.mayza.ecommerce.util;
 
 import br.com.zupacademy.mayza.ecommerce.modelo.compra.Compra;
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.Pergunta;
@@ -19,6 +19,11 @@ public class Emails {
     public void enviaEmailCompra(Compra compra) {
         email.envia("Nova compra ... " + compra, "Você tem uma nova compra",
                 compra.getComprador().getLogin(), compra.getDonoProduto().getLogin() );
+    }
+
+    public void enviaEmailCompraNaoProcessada(Compra compra) {
+        email.envia("O pagamento falhou. Compra id: " + compra.getId(), "Compra não processada.",
+                compra.getComprador().getLogin(), null);
     }
 }
 

@@ -1,10 +1,14 @@
 package br.com.zupacademy.mayza.ecommerce.modelo.compra;
 
+import br.com.zupacademy.mayza.ecommerce.modelo.compra.transacao.Transacao;
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.Produto;
 import br.com.zupacademy.mayza.ecommerce.modelo.usuario.Usuario;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 public class Compra {
@@ -27,6 +31,9 @@ public class Compra {
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    @OneToMany(mappedBy = "compra", cascade = CascadeType.MERGE)
+    public Set<Transacao> transacoes = new HashSet<>();
 
     @Deprecated
     public Compra() {
@@ -64,6 +71,20 @@ public class Compra {
         return this.gatewayPagamento.urlRetorno(this, uriComponentsBuilder);
     }
 
+    public void adicionaTransacao(RetornaGatewayPagamento gatewayPagamento) {
+        Transacao novaTransacao = gatewayPagamento.toTransacao(this);
+        this.transacoes.add(novaTransacao);
+    }
+
+    private Set<Transacao> transacoesConcluidasComSucesso() {
+        Set<Transacao> transacoesConcluidasComSucesso = this.transacoes.stream()
+                .filter(Transacao::concluidaComSucesso).collect(Collectors.toSet());
+        return transacoesConcluidasComSucesso;
+    }
+
+    public boolean processadaComSucesso() {
+        return !transacoesConcluidasComSucesso().isEmpty();
+    }
 
     @Override
     public String toString() {

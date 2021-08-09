@@ -1,7 +1,7 @@
 package br.com.zupacademy.mayza.ecommerce.controller;
 
 import br.com.zupacademy.mayza.ecommerce.controller.request.NovaPerguntaRequest;
-import br.com.zupacademy.mayza.ecommerce.modelo.email.Emails;
+import br.com.zupacademy.mayza.ecommerce.util.Emails;
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.Pergunta;
 import br.com.zupacademy.mayza.ecommerce.modelo.produto.Produto;
 import br.com.zupacademy.mayza.ecommerce.repository.PerguntaRepository;
