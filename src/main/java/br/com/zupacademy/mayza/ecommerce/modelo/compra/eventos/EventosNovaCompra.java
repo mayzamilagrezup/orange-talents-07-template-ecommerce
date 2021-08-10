@@ -19,6 +19,7 @@ public class EventosNovaCompra {
     public void processa(Compra compra) {
         if (compra.processadaComSucesso()) {
             eventoCompraSucessos.forEach(evento -> evento.processa(compra));
+            compra.finalizaCompra();
         } else {
             emails.enviaEmailCompraNaoProcessada(compra);
         }

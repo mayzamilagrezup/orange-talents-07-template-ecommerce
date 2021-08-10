@@ -44,8 +44,8 @@ public class FechamentoCompraController {
         }
 
         compra.get().adicionaTransacao(retornaGatewayPagamento);
-        compraRepository.save(compra.get());
         eventosNovaCompra.processa(compra.get());
+        compraRepository.save(compra.get());
         return ResponseEntity.ok().build();
     }
 }

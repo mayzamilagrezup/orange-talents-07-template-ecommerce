@@ -86,6 +86,12 @@ public class Compra {
         return !transacoesConcluidasComSucesso().isEmpty();
     }
 
+    public void finalizaCompra() {
+        if (this.processadaComSucesso()){
+            this.status = Status.FINALIZADA;
+        }
+    }
+
     @Override
     public String toString() {
         return "Compra{" +
