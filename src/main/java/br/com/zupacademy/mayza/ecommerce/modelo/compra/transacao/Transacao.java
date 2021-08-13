@@ -19,6 +19,7 @@ public class Transacao {
 
     @Column(nullable = false)
     private String idTransacaoGateway;
+
     private LocalDateTime instante;
 
     @ManyToOne
@@ -33,6 +34,10 @@ public class Transacao {
         this.idTransacaoGateway = idTransacaoGateway;
         this.compra = compra;
         this.instante = LocalDateTime.now();
+    }
+
+    public String getIdTransacaoGateway() {
+        return idTransacaoGateway;
     }
 
     public boolean concluidaComSucesso() {

@@ -33,7 +33,7 @@ public class Compra {
     private Status status;
 
     @OneToMany(mappedBy = "compra", cascade = CascadeType.MERGE)
-    public Set<Transacao> transacoes = new HashSet<>();
+    private Set<Transacao> transacoes = new HashSet<>();
 
     @Deprecated
     public Compra() {
@@ -61,6 +61,10 @@ public class Compra {
 
     public Usuario getDonoProduto() {
         return produto.getUsuario();
+    }
+
+    public Set<Transacao> getTransacoes() {
+        return transacoes;
     }
 
     public GatewayPagamento getGatewayPagamento() {
